@@ -6,6 +6,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
     using IocServiceStack;
+    using IocServiceStack.Client;
 
 
     public class Startup
@@ -73,18 +74,7 @@
         {
             var configRef = IocServiceProvider.Configure(config =>
             {
-                config.Services(opt =>
-                {
-                    opt.Assemblies = new[] { "Org.App.BusinessService" };
-
-                    opt.AddDependencies(dopt =>
-                    {
-                        dopt.Assemblies = new[] { "Org.App.DataService" };
-                    });
-
-                    opt.StrictMode = true;
-
-                });
+                //config.UseRemoteServices("")
             });
         }
     }
