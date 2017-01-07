@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using IocServiceStack.Gateway;
+using IocServiceStack;
 
 namespace Org.App.WebService
 {
@@ -57,6 +58,25 @@ namespace Org.App.WebService
 
             });
 
+            RegisterServices();
+        }
+        private void RegisterServices()
+        {
+            var configRef = IocServiceProvider.Configure(config =>
+            {
+                config.Services(opt =>
+                {
+                    opt.Assemblies = new[] { "Org.App.BusinessService" };
+
+                    opt.AddDependencies(dopt =>
+                    {
+                        dopt.Assemblies = new[] { "Org.App.DataService" };
+                    });
+
+                    opt.StrictMode = true;
+
+                });
+            });
         }
     }
 }
