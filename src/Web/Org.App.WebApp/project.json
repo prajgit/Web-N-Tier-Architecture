@@ -18,8 +18,8 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "IocServiceStack": "1.0.0-rc-1",
-    "IocServiceStack.Client": "1.0.0-alpha-1"
+    "IocServiceStack": "1.0.0-rc-2",
+    "IocServiceStack.Client": "1.0.0-alpha-2"
   },
 
   "tools": {

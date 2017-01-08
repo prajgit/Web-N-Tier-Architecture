@@ -74,7 +74,7 @@
         {
             var configRef = IocServiceProvider.Configure(config =>
             {
-                //config.UseRemoteServices("")
+                config.UseRemoteServices("http://localhost:5000/serviceapi");
             });
         }
     }
