@@ -1,4 +1,4 @@
-﻿namespace NjetInterserviceWebApplication
+﻿namespace Org.App.WebApp
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -64,7 +64,7 @@
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Customer}/{action=Index}/{id?}");
             });
 
             RegisterServices();
@@ -74,7 +74,7 @@
         {
             var configRef = IocServiceProvider.Configure(config =>
             {
-                config.UseRemoteServices("http://localhost:5000/serviceapi");
+                config.UseRemoteServices("http://localhost:65039/serviceapi");
             });
         }
     }
