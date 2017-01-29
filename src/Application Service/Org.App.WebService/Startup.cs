@@ -54,7 +54,7 @@ namespace Org.App.WebService
 
             app.UseMvc(route => {
 
-                route.MapServicesGateway();
+                route.MapServicesGateway(ServiceManager.Instance);
 
             });
 
@@ -62,9 +62,9 @@ namespace Org.App.WebService
         }
         private void RegisterServices()
         {
-            var configRef = IocServiceProvider.Configure(config =>
+            var configRef = IocServicelet.Configure(config =>
             {
-                config.Services(opt =>
+                config.AddServices(opt =>
                 {
                     opt.Assemblies = new[] { "Org.App.BusinessService" };
 

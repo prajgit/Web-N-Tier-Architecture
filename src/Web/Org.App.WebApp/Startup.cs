@@ -72,7 +72,7 @@
 
         private void RegisterServices()
         {
-            var configRef = IocServiceProvider.Configure(config =>
+            var configRef = IocServicelet.Configure(config =>
             {
                 config.UseRemoteServices("http://localhost:65039/serviceapi");
             });
